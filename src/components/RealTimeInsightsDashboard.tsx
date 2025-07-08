@@ -109,8 +109,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '1',
     type: 'opportunity',
-    title: 'Athletic Wear Surge Detected',
-    message: 'Nike and Adidas activewear demand spiked 180% in last 2 hours. Strong performance in sports category.',
+    title: 'Wedding Season Surge Detected',
+    message: 'Sherwani demand spiked 280% in last 2 hours. Only 5 days inventory remaining.',
     impact: 'high',
     urgency: 'immediate',
     timestamp: new Date(Date.now() - 5 * 60 * 1000),
@@ -120,8 +120,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '2',
     type: 'threat',
-    title: 'Fast Fashion Price Competition',
-    message: 'H&M launched aggressive pricing on casual wear - affecting mid-tier segment across brands.',
+    title: 'Competitor Price Drop Alert',
+    message: 'Allen Solly launched 30% off on formal shirts - affecting our mid-tier segment.',
     impact: 'medium',
     urgency: 'today',
     timestamp: new Date(Date.now() - 15 * 60 * 1000),
@@ -131,8 +131,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '3',
     type: 'trend',
-    title: 'Sustainable Fashion Trend Spike',
-    message: '#SustainableFashion trending with 45K mentions - opportunity for eco-friendly positioning.',
+    title: 'Social Media Trend Spike',
+    message: '#CustomTailoring trending with 45K mentions - opportunity for brand positioning.',
     impact: 'medium',
     urgency: 'this_week',
     timestamp: new Date(Date.now() - 30 * 60 * 1000),
@@ -142,8 +142,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '4',
     type: 'competitor',
-    title: 'New Brand Entry Alert',
-    message: 'Uniqlo planning entry in local market next quarter - potential market share impact.',
+    title: 'Manyavar Store Opening',
+    message: 'New Manyavar store opening 1.5km away next month - market share risk.',
     impact: 'high',
     urgency: 'this_week',
     timestamp: new Date(Date.now() - 45 * 60 * 1000),
@@ -154,24 +154,24 @@ const marketAlerts: MarketAlert[] = [
 
 const competitorActivities: CompetitorActivity[] = [
   {
-    competitor: 'H&M',
-    activity: '25% discount on casual wear collection',
+    competitor: 'Allen Solly',
+    activity: '30% discount on formal shirts',
     impact: -8.5,
     timestamp: new Date(Date.now() - 10 * 60 * 1000),
     category: 'pricing',
     threat_level: 'high'
   },
   {
-    competitor: 'Zara',
-    activity: 'New sustainable collection launch',
+    competitor: 'Manyavar',
+    activity: 'New wedding collection launch',
     impact: -5.2,
     timestamp: new Date(Date.now() - 25 * 60 * 1000),
     category: 'product',
     threat_level: 'medium'
   },
   {
-    competitor: 'Uniqlo',
-    activity: 'Market entry announcement',
+    competitor: 'Cotton King',
+    activity: 'Store expansion in Maharashtra',
     impact: -3.1,
     timestamp: new Date(Date.now() - 40 * 60 * 1000),
     category: 'expansion',
@@ -521,9 +521,9 @@ export const RealTimeInsightsDashboard: React.FC = () => {
               Immediate Opportunities
             </h4>
             <ul className="space-y-2">
-              <li className="text-sm text-green-800">• Increase sherwani inventory by 30% - wedding season surge detected</li>
-              <li className="text-sm text-green-800">• Launch premium custom tailoring campaign - trending on social media</li>
-              <li className="text-sm text-green-800">• Target corporate bulk orders - IT sector expansion in Pune</li>
+              <li className="text-sm text-green-800">• Increase activewear inventory by 30% - athletic wear surge detected</li>
+              <li className="text-sm text-green-800">• Launch sustainable fashion campaign - trending on social media</li>
+              <li className="text-sm text-green-800">• Focus on premium casual wear - strong performance across brands</li>
             </ul>
           </div>
 
@@ -533,9 +533,9 @@ export const RealTimeInsightsDashboard: React.FC = () => {
               Immediate Threats
             </h4>
             <ul className="space-y-2">
-              <li className="text-sm text-red-800">• Counter Allen Solly pricing with value proposition messaging</li>
-              <li className="text-sm text-red-800">• Prepare for Manyavar competition with exclusive collections</li>
-              <li className="text-sm text-red-800">• Address inventory shortage in high-demand categories</li>
+              <li className="text-sm text-red-800">• Counter H&M pricing with value proposition messaging</li>
+              <li className="text-sm text-red-800">• Prepare for Uniqlo market entry with differentiated positioning</li>
+              <li className="text-sm text-red-800">• Address potential inventory gaps in high-performing categories</li>
             </ul>
           </div>
         </div>
