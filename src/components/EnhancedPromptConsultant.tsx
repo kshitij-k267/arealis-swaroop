@@ -297,8 +297,7 @@ export const EnhancedPromptConsultant: React.FC<EnhancedPromptConsultantProps> =
             <div>
               <h2 className="text-white font-bold text-xl">ForesightFlow AI Assistant</h2>
               <p className="text-slate-300 text-lg">Advanced LLM with multi-brand intelligence & market analysis</p>
-                Smart Prompts:
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Smart Prompts:</h3>
               <div className="grid gap-4">
                 {smartPrompts.map((prompt, index) => {
                   const Icon = prompt.icon;
