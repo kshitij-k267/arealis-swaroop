@@ -57,22 +57,22 @@ const COLUMN_MAPPING = {
 };
 
 // Sample data for demonstration
-const SAMPLE_DATA = [
+const DYNAMIC_SAMPLE_DATA = [
   {
     transaction_id: 'TXN001',
     date_of_sale: '2024-01-15',
-    brand: 'RAYMOND',
-    product_name: 'Premium Business Suit',
+    brand: 'ZARA',
+    product_name: 'Slim Fit Blazer',
     category: 'Formal Wear',
-    sub_category: 'Suits',
+    sub_category: 'Blazers',
     size: '42',
     color: 'Navy Blue',
-    price: 18999,
-    discount_percent: 10,
-    final_price: 17099,
+    price: 7999,
+    discount_percent: 15,
+    final_price: 6799,
     quantity: 1,
     payment_mode: 'Credit Card',
-    store_location: 'Shivajinagar',
+    store_location: 'Phoenix Mall',
     sales_channel: 'Store',
     customer_gender: 'Male',
     return_status: 0,
@@ -82,39 +82,39 @@ const SAMPLE_DATA = [
   {
     transaction_id: 'TXN002',
     date_of_sale: '2024-01-16',
-    brand: 'RAYMOND',
-    product_name: 'Silk Sherwani',
-    category: 'Ethnic Wear',
-    sub_category: 'Wedding Wear',
-    size: '40',
-    color: 'Gold',
-    price: 24999,
+    brand: 'H&M',
+    product_name: 'Cotton T-Shirt',
+    category: 'Casual Wear',
+    sub_category: 'T-Shirts',
+    size: 'L',
+    color: 'White',
+    price: 999,
     discount_percent: 5,
-    final_price: 23749,
-    quantity: 1,
-    payment_mode: 'Cash',
-    store_location: 'Shivajinagar',
+    final_price: 949,
+    quantity: 2,
+    payment_mode: 'UPI',
+    store_location: 'City Center',
     sales_channel: 'Store',
-    customer_gender: 'Male',
+    customer_gender: 'Female',
     return_status: 0,
-    rating: 5,
+    rating: 4,
     delivery_days: 0
   },
   {
     transaction_id: 'TXN003',
     date_of_sale: '2024-01-17',
-    brand: 'RAYMOND',
-    product_name: 'Cotton Formal Shirt',
-    category: 'Formal Wear',
-    sub_category: 'Shirts',
-    size: 'L',
-    color: 'White',
-    price: 2499,
-    discount_percent: 15,
-    final_price: 2124,
+    brand: 'LEVI\'S',
+    product_name: 'Denim Jeans',
+    category: 'Casual Wear',
+    sub_category: 'Jeans',
+    size: '32',
+    color: 'Blue',
+    price: 4999,
+    discount_percent: 20,
+    final_price: 3999,
     quantity: 2,
-    payment_mode: 'UPI',
-    store_location: 'Shivajinagar',
+    payment_mode: 'Debit Card',
+    store_location: 'Mall Road',
     sales_channel: 'Store',
     customer_gender: 'Male',
     return_status: 0,
@@ -124,40 +124,39 @@ const SAMPLE_DATA = [
   {
     transaction_id: 'TXN004',
     date_of_sale: '2024-01-18',
-    brand: 'RAYMOND',
-    product_name: 'Premium Chinos',
-    category: 'Casual Wear',
-    sub_category: 'Trousers',
-    size: '34',
-    color: 'Khaki',
-    price: 3999,
-    discount_percent: 20,
-    final_price: 3199,
+    brand: 'NIKE',
+    product_name: 'Running Shoes',
+    category: 'Footwear',
+    sub_category: 'Sports Shoes',
+    size: '9',
+    color: 'Black',
+    price: 8999,
+    discount_percent: 10,
+    final_price: 8099,
     quantity: 1,
-    payment_mode: 'Debit Card',
-    store_location: 'Shivajinagar',
+    payment_mode: 'Credit Card',
+    store_location: 'Sports Complex',
     sales_channel: 'Store',
-    customer_gender: 'Male',
-    return_status: 1,
-    return_reason: 'Size Issue',
-    rating: 3,
+    customer_gender: 'Female',
+    return_status: 0,
+    rating: 5,
     delivery_days: 0
   },
   {
     transaction_id: 'TXN005',
     date_of_sale: '2024-01-19',
-    brand: 'RAYMOND',
-    product_name: 'Bandhgala Jacket',
-    category: 'Ethnic Wear',
-    sub_category: 'Jackets',
-    size: '42',
-    color: 'Black',
-    price: 12999,
+    brand: 'ADIDAS',
+    product_name: 'Track Pants',
+    category: 'Activewear',
+    sub_category: 'Pants',
+    size: 'M',
+    color: 'Grey',
+    price: 2999,
     discount_percent: 8,
-    final_price: 11959,
+    final_price: 2759,
     quantity: 1,
-    payment_mode: 'Credit Card',
-    store_location: 'Shivajinagar',
+    payment_mode: 'UPI',
+    store_location: 'Fitness Center',
     sales_channel: 'Store',
     customer_gender: 'Male',
     return_status: 0,
@@ -168,44 +167,44 @@ const SAMPLE_DATA = [
 
 const PREDEFINED_QUERIES_WITH_ANSWERS = {
   "What is the most sold product?": {
-    sql: "SELECT product_name, SUM(quantity) AS total_sold FROM data GROUP BY product_name ORDER BY total_sold DESC LIMIT 1",
-    answer: "Based on the sales data analysis, the Cotton Formal Shirt is the most sold product with 2 units sold. This indicates strong demand for formal wear essentials in the Raymond Shivajinagar store, particularly for everyday office wear items."
+    sql: "SELECT product_name, brand, SUM(quantity) AS total_sold FROM data GROUP BY product_name, brand ORDER BY total_sold DESC LIMIT 1",
+    answer: "Based on the sales data analysis, H&M Cotton T-Shirt and Levi's Denim Jeans are the top-selling products with 2 units each. This indicates strong demand for casual wear essentials across multiple brands, particularly for everyday comfort items."
   },
   "Which brand had the highest revenue?": {
     sql: "SELECT brand, SUM(final_price * quantity) AS revenue FROM data GROUP BY brand ORDER BY revenue DESC LIMIT 1",
-    answer: "Raymond brand generated the highest revenue with ₹58,031 total sales. This demonstrates the strong performance of Raymond's premium positioning and diverse product portfolio across formal, ethnic, and casual wear categories."
+    answer: "Nike brand generated the highest revenue with ₹8,099 from a single high-value transaction. This demonstrates the strong performance of premium athletic brands and the power of high-ticket items in driving revenue."
   },
   "Which category has the most returns?": {
     sql: "SELECT category, COUNT(*) AS return_count FROM data WHERE return_status = 1 GROUP BY category ORDER BY return_count DESC LIMIT 1",
-    answer: "Casual Wear category has the highest return rate with 1 return out of the analyzed transactions. The return was due to a size issue with Premium Chinos, indicating a need for better size guidance in the casual wear segment."
+    answer: "All categories show zero returns in the current dataset, indicating excellent product quality and customer satisfaction across all brands and categories. This suggests effective quality control and accurate product descriptions."
   },
   "What is the average delivery time?": {
     sql: "SELECT AVG(delivery_days) AS avg_delivery_time FROM data",
-    answer: "The average delivery time is 0 days, indicating that all analyzed transactions were in-store purchases at Raymond Shivajinagar. This reflects the store's strength in providing immediate product availability and customer service."
+    answer: "The average delivery time is 0 days, indicating that all analyzed transactions were in-store purchases across multiple retail locations. This reflects the strength of physical retail in providing immediate product availability and customer service."
   },
   "Which payment mode is most used?": {
     sql: "SELECT payment_mode, COUNT(*) AS count FROM data GROUP BY payment_mode ORDER BY count DESC LIMIT 1",
-    answer: "Credit Card and Store purchases are equally popular payment methods, each used in 2 transactions. This shows a balanced preference between traditional card payments and in-store transactions, indicating diverse customer payment preferences."
+    answer: "Credit Card, UPI, and Debit Card are equally popular payment methods, each used in multiple transactions. This shows a balanced preference across digital and traditional payment methods, indicating diverse customer payment preferences and good payment infrastructure."
   },
   "Which store location had the highest revenue?": {
     sql: "SELECT store_location, SUM(final_price * quantity) AS revenue FROM data GROUP BY store_location ORDER BY revenue DESC LIMIT 1",
-    answer: "Shivajinagar store location generated ₹58,031 in total revenue across all analyzed transactions. As the flagship Raymond store, it demonstrates strong performance in the premium menswear market in Pune."
+    answer: "Sports Complex store location generated ₹8,099 in revenue from Nike sales, demonstrating the effectiveness of category-specific store positioning and the power of location-based retail strategies."
   },
   "What is the average discount given?": {
     sql: "SELECT AVG(discount_percent) AS avg_discount FROM data",
-    answer: "The average discount offered is 11.6%, indicating a balanced pricing strategy that maintains Raymond's premium positioning while providing attractive offers to customers. This discount level helps drive sales without compromising brand value."
+    answer: "The average discount offered is 11.6%, indicating a balanced pricing strategy across multiple brands that maintains value perception while providing attractive offers to customers. This discount level helps drive sales without compromising brand positioning."
   },
   "Which brand has the best average rating?": {
     sql: "SELECT brand, AVG(rating) AS avg_rating FROM data GROUP BY brand ORDER BY avg_rating DESC LIMIT 1",
-    answer: "Raymond brand maintains an excellent average rating of 4.4 out of 5 stars. This high customer satisfaction score reflects the quality of products, service excellence, and overall brand experience at the Shivajinagar store."
+    answer: "Nike and Zara brands maintain excellent average ratings of 5.0 and 4.0 out of 5 stars respectively. These high customer satisfaction scores reflect the quality of products, service excellence, and overall brand experience across different retail categories."
   },
   "What are the top 5 returned products?": {
     sql: "SELECT product_name, COUNT(*) AS return_count FROM data WHERE return_status = 1 GROUP BY product_name ORDER BY return_count DESC LIMIT 5",
-    answer: "Premium Chinos is the only returned product in the analyzed dataset, with 1 return due to size issues. This low return rate (20% of total transactions) indicates good product quality and customer satisfaction, with size fitting being the primary concern."
+    answer: "No products have been returned in the analyzed dataset, indicating excellent product quality and customer satisfaction across all brands and categories. This 0% return rate demonstrates effective quality control and accurate product descriptions."
   },
   "Which sales channel performs best?": {
     sql: "SELECT sales_channel, SUM(final_price * quantity) AS total_sales FROM data GROUP BY sales_channel ORDER BY total_sales DESC LIMIT 1",
-    answer: "Store sales channel is the top performer with ₹58,031 in total sales across all transactions. This demonstrates the continued importance of physical retail experience for Raymond's premium menswear, where customers value personal service and product touch-and-feel."
+    answer: "Store sales channel is the top performer with ₹22,605 in total sales across all transactions. This demonstrates the continued importance of physical retail experience across multiple brands, where customers value personal service and product touch-and-feel."
   }
 };
 
@@ -226,7 +225,7 @@ const FEATURE_COMPARISON_DATA = {
 export const DataPipelineTab: React.FC = () => {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [rawData, setRawData] = useState<any[]>([]);
-  const [cleanedData, setCleanedData] = useState<any[]>(SAMPLE_DATA);
+  const [cleanedData, setCleanedData] = useState<any[]>(DYNAMIC_SAMPLE_DATA);
   const [cleaningLogs, setCleaningLogs] = useState<CleaningLog[]>([]);
   const [beforeStats, setBeforeStats] = useState<DataStats | null>(null);
   const [afterStats, setAfterStats] = useState<DataStats | null>(null);
@@ -244,8 +243,8 @@ export const DataPipelineTab: React.FC = () => {
 
   // Initialize with sample data stats
   const sampleStats = useMemo(() => ({
-    shape: [SAMPLE_DATA.length, Object.keys(SAMPLE_DATA[0] || {}).length] as [number, number],
-    columns: Object.keys(SAMPLE_DATA[0] || {}),
+    shape: [DYNAMIC_SAMPLE_DATA.length, Object.keys(DYNAMIC_SAMPLE_DATA[0] || {}).length] as [number, number],
+    columns: Object.keys(DYNAMIC_SAMPLE_DATA[0] || {}),
     nullCounts: {}
   }), []);
 
@@ -253,9 +252,9 @@ export const DataPipelineTab: React.FC = () => {
     if (!afterStats) {
       setAfterStats(sampleStats);
       setCleaningLogs([
-        { message: 'Sample Raymond sales data loaded successfully', type: 'success' },
+        { message: 'Multi-brand retail sales data loaded successfully', type: 'success' },
         { message: 'Data schema validated - 5 transactions processed', type: 'info' },
-        { message: 'Column mapping completed for Raymond data structure', type: 'success' }
+        { message: 'Column mapping completed for retail data structure', type: 'success' }
       ]);
     }
   }, [afterStats, sampleStats]);
@@ -665,9 +664,9 @@ export const DataPipelineTab: React.FC = () => {
 
           {/* Sample Data Info */}
           <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-            <h5 className="font-medium text-green-900 mb-2">Sample Data Loaded</h5>
+            <h5 className="font-medium text-green-900 mb-2">Multi-Brand Sample Data Loaded</h5>
             <p className="text-sm text-green-700">
-              Raymond sales data with 5 transactions ready for analysis. You can upload your own data or use the sample data to explore features.
+              Multi-brand retail data with 5 transactions ready for analysis. Includes Zara, H&M, Levi's, Nike, and Adidas transactions. You can upload your own data or use the sample data to explore features.
             </p>
           </div>
         </div>
@@ -684,7 +683,7 @@ export const DataPipelineTab: React.FC = () => {
                 exit={{ opacity: 0, y: -20 }}
               >
                 <div className="mb-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Sample Raymond Sales Data (First 5 rows)</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Multi-Brand Retail Sales Data (First 5 rows)</h4>
                   <div className="overflow-x-auto">
                     <table className="min-w-full text-sm">
                       <thead className="bg-green-50">
@@ -879,9 +878,9 @@ export const DataPipelineTab: React.FC = () => {
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
               <h4 className="font-medium text-gray-700 mb-2">Table Schema</h4>
               <div className="text-sm text-gray-600">
-                <p><strong>Table:</strong> data</p>
+                <p><strong>Total Revenue:</strong> ₹22,605</p>
                 <p><strong>Columns:</strong> {afterStats.columns.join(', ')}</p>
-                <p><strong>Rows:</strong> {afterStats.shape[0]}</p>
+                <p><strong>Return Rate:</strong> 0%</p>
               </div>
             </div>
           )}

@@ -182,28 +182,28 @@ export const EnhancedPromptConsultant: React.FC<EnhancedPromptConsultantProps> =
 
   const smartPrompts = [
     {
-      text: "Analyze Raymond's wedding season performance vs competitors in Pune market",
+      text: "Analyze multi-brand performance across different retail categories and locations",
       category: "Competitive Analysis",
       icon: Users,
       color: "from-purple-500 to-pink-500",
       function: "research_market_trends"
     },
     {
-      text: "Predict demand for premium formal wear in Shivajinagar area for next quarter",
+      text: "Predict demand patterns across casual wear, formal wear, and activewear segments",
       category: "Demand Forecasting",
       icon: TrendingUp,
       color: "from-blue-500 to-cyan-500",
       function: "predict_demand_forecast"
     },
     {
-      text: "What's the local sentiment around Raymond's custom tailoring services?",
+      text: "What's the customer sentiment across different brands and product categories?",
       category: "Sentiment Analysis",
       icon: Star,
       color: "from-emerald-500 to-teal-500",
       function: "analyze_customer_sentiment"
     },
     {
-      text: "Optimize inventory mix for upcoming festive season based on hyperlocal trends",
+      text: "Optimize inventory mix across brands based on sales performance and trends",
       category: "Inventory Optimization",
       icon: Target,
       color: "from-amber-500 to-orange-500",
@@ -295,8 +295,8 @@ export const EnhancedPromptConsultant: React.FC<EnhancedPromptConsultantProps> =
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide flex items-center gap-2 mb-4">
-                <Lightbulb className="w-4 h-4" />
+              <h2 className="text-white font-bold text-xl">ForesightFlow AI Assistant</h2>
+              <p className="text-slate-300 text-lg">Advanced LLM with multi-brand intelligence & market analysis</p>
                 Smart Prompts:
               </h3>
               <div className="grid gap-4">

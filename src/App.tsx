@@ -56,10 +56,10 @@ function App() {
                 <Store className="w-10 h-10 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                  Raymond Intelligence Suite
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  ForesightFlow X Arealis
                 </h1>
-                <p className="text-gray-600 font-medium text-lg">Real-time Market Intelligence & Strategic Business Analytics</p>
+                <p className="text-gray-600 font-medium text-lg">AI-Powered Retail Intelligence & Market Analytics Platform</p>
               </div>
             </motion.div>
             
@@ -69,14 +69,14 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
             >
               <div className="text-right">
-                <div className="text-xl font-bold text-gray-900">Raymond Shivajinagar</div>
+                <div className="text-xl font-bold text-gray-900">Retail Intelligence Hub</div>
                 <div className="text-sm text-gray-600 flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  Premium Menswear Store • Live Market Intelligence
+                  Multi-Brand Analytics • Live Market Intelligence
                 </div>
               </div>
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center shadow-lg">
-                <span className="text-white text-xl font-bold">R</span>
+                <span className="text-white text-xl font-bold">F</span>
               </div>
             </motion.div>
           </div>
