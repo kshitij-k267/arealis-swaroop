@@ -207,8 +207,8 @@ export const AIRecommendationsWidget: React.FC = () => {
               <Brain className="w-6 h-6 text-white" />
             </motion.div>
             <div>
-              <h2 className="text-white font-bold text-xl">Raymond AI Intelligence</h2>
-              <p className="text-indigo-100 text-sm">Premium menswear insights & strategic guidance</p>
+              <h2 className="text-white font-bold text-xl">ForesightFlow AI Intelligence</h2>
+              <p className="text-indigo-100 text-sm">Multi-brand retail insights & strategic guidance</p>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1 bg-indigo-500 rounded-full">

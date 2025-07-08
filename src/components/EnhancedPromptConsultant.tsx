@@ -290,8 +290,8 @@ export const EnhancedPromptConsultant: React.FC<EnhancedPromptConsultantProps> =
           >
             <div className="text-center py-8">
               <Brain className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-700 mb-2">Raymond AI Assistant Ready</h3>
-              <p className="text-gray-500">Ask me anything about your store performance, market trends, or business strategy</p>
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">ForesightFlow AI Assistant Ready</h3>
+              <p className="text-gray-500">Ask me anything about multi-brand performance, market trends, or retail strategy</p>
             </div>
 
             <div>

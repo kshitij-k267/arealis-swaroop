@@ -109,8 +109,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '1',
     type: 'opportunity',
-    title: 'Wedding Season Surge Detected',
-    message: 'Sherwani demand spiked 280% in last 2 hours. Only 5 days inventory remaining.',
+    title: 'Athletic Wear Surge Detected',
+    message: 'Nike and Adidas activewear demand spiked 180% in last 2 hours. Strong performance in sports category.',
     impact: 'high',
     urgency: 'immediate',
     timestamp: new Date(Date.now() - 5 * 60 * 1000),
@@ -120,8 +120,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '2',
     type: 'threat',
-    title: 'Competitor Price Drop Alert',
-    message: 'Allen Solly launched 30% off on formal shirts - affecting our mid-tier segment.',
+    title: 'Fast Fashion Price Competition',
+    message: 'H&M launched aggressive pricing on casual wear - affecting mid-tier segment across brands.',
     impact: 'medium',
     urgency: 'today',
     timestamp: new Date(Date.now() - 15 * 60 * 1000),
@@ -131,8 +131,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '3',
     type: 'trend',
-    title: 'Social Media Trend Spike',
-    message: '#CustomTailoring trending with 45K mentions - opportunity for brand positioning.',
+    title: 'Sustainable Fashion Trend Spike',
+    message: '#SustainableFashion trending with 45K mentions - opportunity for eco-friendly positioning.',
     impact: 'medium',
     urgency: 'this_week',
     timestamp: new Date(Date.now() - 30 * 60 * 1000),
@@ -142,8 +142,8 @@ const marketAlerts: MarketAlert[] = [
   {
     id: '4',
     type: 'competitor',
-    title: 'Manyavar Store Opening',
-    message: 'New Manyavar store opening 1.5km away next month - market share risk.',
+    title: 'New Brand Entry Alert',
+    message: 'Uniqlo planning entry in local market next quarter - potential market share impact.',
     impact: 'high',
     urgency: 'this_week',
     timestamp: new Date(Date.now() - 45 * 60 * 1000),
@@ -154,24 +154,24 @@ const marketAlerts: MarketAlert[] = [
 
 const competitorActivities: CompetitorActivity[] = [
   {
-    competitor: 'Allen Solly',
-    activity: '30% discount on formal shirts',
+    competitor: 'H&M',
+    activity: '25% discount on casual wear collection',
     impact: -8.5,
     timestamp: new Date(Date.now() - 10 * 60 * 1000),
     category: 'pricing',
     threat_level: 'high'
   },
   {
-    competitor: 'Manyavar',
-    activity: 'New wedding collection launch',
+    competitor: 'Zara',
+    activity: 'New sustainable collection launch',
     impact: -5.2,
     timestamp: new Date(Date.now() - 25 * 60 * 1000),
     category: 'product',
     threat_level: 'medium'
   },
   {
-    competitor: 'Cotton King',
-    activity: 'Store expansion in Maharashtra',
+    competitor: 'Uniqlo',
+    activity: 'Market entry announcement',
     impact: -3.1,
     timestamp: new Date(Date.now() - 40 * 60 * 1000),
     category: 'expansion',
